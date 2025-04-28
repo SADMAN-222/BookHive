@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- ListView to display cart items -->
+    <ListView
+        android:id="@+id/lvCartItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" /> <!-- This makes the ListView take up available space -->
+
+    <!-- Total Price TextView at the bottom -->
+    <TextView
+        android:id="@+id/tvTotalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:text="Total Price: $0.00"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_green_dark"
+        android:gravity="end" /> <!-- Aligns the text to the right -->
+
+    <!-- Order Button at the bottom -->
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Place Order"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"/>
+
+</LinearLayout>

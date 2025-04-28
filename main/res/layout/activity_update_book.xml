@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:scrollbars="vertical">
+
+    <!-- Book Image -->
+    <ImageView
+        android:id="@+id/ivBookImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/placeholder_image"
+    android:contentDescription="Book Image"
+    android:scaleType="centerCrop" />
+
+    <!-- Book Title -->
+    <EditText
+        android:id="@+id/etBookTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Book Title"
+        android:inputType="text"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp" />
+
+    <!-- Book Author -->
+    <EditText
+        android:id="@+id/etBookAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Book Author"
+        android:inputType="text"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Book Price -->
+    <EditText
+        android:id="@+id/etBookPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Book Price"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Book Quantity -->
+    <EditText
+        android:id="@+id/etBookQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Available Quantity"
+        android:inputType="number"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Update Button -->
+    <Button
+        android:id="@+id/btnUpdateBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Book"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="#BC0E0E"
+        android:backgroundTint="#000000"/>
+
+</LinearLayout>

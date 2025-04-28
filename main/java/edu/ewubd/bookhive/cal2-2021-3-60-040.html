@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+    }
+    #todoInput {
+      padding: 10px;
+      width: 250px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px;
+      font-size: 14px;
+      margin-right: 5px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+    li {
+      background: #fff;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+    .in-progress {
+      color: orange;
+      font-style: italic;
+    }
+    .task-text {
+      flex: 1;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📝 To-Do List App</h2>
+
+  <input type="text" id="todoInput" placeholder="Enter a task">
+  <button onclick="addTodo()">Add Task</button>
+
+  <ul id="todoList"></ul>
+
+  <script>
+    function addTodo() {
+      const input = document.getElementById("todoInput");
+      const taskText = input.value.trim();
+
+      if (taskText === "") {
+        alert("Task cannot be empty!");
+        return;
+      }
+
+      const li = document.createElement("li");
+
+      const span = document.createElement("span");
+      span.className = "task-text";
+      span.innerText = taskText;
+
+      const progressBtn = document.createElement("button");
+      progressBtn.innerText = "Progress";
+      progressBtn.onclick = () => {
+        span.classList.toggle("in-progress");
+      };
+
+      const completeBtn = document.createElement("button");
+      completeBtn.innerText = "Complete";
+      completeBtn.onclick = () => {
+        span.classList.remove("in-progress");
+        span.classList.toggle("completed");
+      };
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.innerText = "Delete";
+      deleteBtn.onclick = () => {
+        li.remove();
+      };
+
+      li.appendChild(span);
+      li.appendChild(progressBtn);
+      li.appendChild(completeBtn);
+      li.appendChild(deleteBtn);
+
+      document.getElementById("todoList").appendChild(li);
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>

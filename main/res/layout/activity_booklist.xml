@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0.90">
+
+    <!-- LinearLayout to hold the entire content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Header section with Book List title and notification/cart icons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Book List"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:textColor="#000000" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivNotification"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/notification"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Notification Icon"
+                    android:background="#ffffff"/>
+
+                <ImageView
+                    android:id="@+id/ivViewCart"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/cart"
+                    android:layout_toEndOf="@+id/ivNotification"
+                    android:contentDescription="View Cart Icon"
+                    android:background="#ffffff"/>
+
+                <TextView
+                    android:id="@+id/tvCartBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/ivViewCart"
+                    android:layout_alignEnd="@+id/ivViewCart"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- GridView to display list of books -->
+        <GridView
+
+            android:id="@+id/gvBooks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:horizontalSpacing="8dp"
+            android:numColumns="2"
+            android:padding="4dp"
+            android:verticalSpacing="8dp"/>
+    </LinearLayout>
+
+    <!-- FloatingActionButton to add new books (for admin users) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/add"
+        android:contentDescription="Add Book"
+        android:backgroundTint="#3F51B5" />
+
+    <!-- ProgressBar to show loading while fetching books -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:indeterminate="true" />
+</RelativeLayout>
