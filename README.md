@@ -1,7 +1,7 @@
 **Description for Your GitHub Repository:**
 
 # BookHive - Android Mobile Application  
-BookHive is a feature-rich mobile application developed as part of the **CSE489: Mobile Development** course under the guidance of **Mostofa Kamal Rasel Sir**. The app is designed for book lovers, allowing them to browse, add books to their cart, place orders, and manage their collections seamlessly.  
+BookHive is a feature-rich mobile application developed as part of the **CSE489: Mobile Development** course under the guidance of ** Dr. Mostofa Kamal Rasel Sir**. The app is designed for book lovers, allowing them to browse, add books to their cart, place orders, and manage their collections seamlessly.  
 
 ## Features  
 - **User Authentication:** Secure login and signup for users and admins with Firebase integration.  
